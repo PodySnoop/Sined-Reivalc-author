@@ -27,10 +27,10 @@ COPY . .
 
 RUN composer install --no-dev --optimize-autoloader
 
-RUN mkdir -p storage/logs && chmod -R 777 storage
-
-RUN php artisan migrate --force
+# Storage permissions
+RUN mkdir -p storage/logs && chmod -R 777 storage bootstrap/cache
 
 EXPOSE 8000
 
-CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
+# ⭐ Run migrations at startup, THEN start Laravel
+CMD php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=8000
