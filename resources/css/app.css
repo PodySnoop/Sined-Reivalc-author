@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Force les liens de la navbar à être blancs */
+nav a {
+    color: white !important;
+}
+
+nav a:hover {
+    color: white !important;
+    border-color: white !important;
+}
