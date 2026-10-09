@@ -1,4 +1,4 @@
-# rebuild
+# force rebuild
 
 FROM php:8.2-fpm
 
