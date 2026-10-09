@@ -30,7 +30,7 @@ RUN composer install --no-dev --optimize-autoloader
 RUN mkdir -p storage/logs && chmod -R 777 storage bootstrap/cache
 
 # Copy Nginx config
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/sites-enabled/default
 
 EXPOSE 8000
 
